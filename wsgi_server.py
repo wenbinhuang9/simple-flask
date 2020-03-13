@@ -73,7 +73,6 @@ class WSGIserver(object):
         # Required CGI variables
         env['REQUEST_METHOD']    = self.request_method
         # GET
-        env['PATH_INFO']         = self.path
         # /hello
         env['SERVER_NAME']       = self.server_name
         # localhost
@@ -83,6 +82,7 @@ class WSGIserver(object):
         else:
             path,query = self.path,''
         env['QUERY_STRING'] = query
+        env['PATH_INFO']         = path
 
         headers = {}
         format_data = data.splitlines()

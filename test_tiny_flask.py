@@ -6,8 +6,12 @@ app = Tinyflask(__name__)
 def hello_world():
     return "<h1>Hello, web!</h1>"
 
-environ = {"PATH_INFO" :"/", "REQUEST_METHOD": "GET"}
-def start_response(a, b):
-    pass
+@app.rout(rule='/name/<username>')
+def hello_world(username):
+    return "<h1>Hello, {0}!</h1>".format(username)
+
+@app.rout(rule='/info/<info>/<username>')
+def hello_world(info, username):
+    return "<h1>My Name is {0}, Present, {1}!</h1>".format(username, info)
+
 app.run()
-print(app.run_wsgi(environ, start_response))
