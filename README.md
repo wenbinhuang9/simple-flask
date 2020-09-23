@@ -7,8 +7,10 @@ Re-wheel the framework of Flask. It is an **http server** based on WSGI protocol
 ```python
 from ben_flask import Tinyflask
 
+## new an application here 
 app = Tinyflask(__name__)
 
+## application api define 
 @app.rout(rule='/')
 def hello_world():
     return "<h1>Hello, web!</h1>"
