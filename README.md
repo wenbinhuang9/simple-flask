@@ -4,7 +4,7 @@ Re-wheel the framework of Flask. It is an http server based on WSGI protocol and
 
 # how to use 
 
-```
+```python
 from ben_flask import Tinyflask
 
 app = Tinyflask(__name__)
